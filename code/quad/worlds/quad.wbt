@@ -1,0 +1,283 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.5540324010603892 -0.8012302087928221 -0.22600498023953036 0.9681155824928306
+  position -0.6737960525391989 0.7067286657452964 0.795915645800362
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Robot {
+  translation 0 0.05 0
+  children [
+    DEF legA Hinge2Joint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.075 0 0.055
+      }
+      jointParameters2 JointParameters {
+        axis 1 0 0
+      }
+      device [
+        DEF BASE_JOINT_Y RotationalMotor {
+          name "motor_A0"
+        }
+      ]
+      device2 [
+        DEF BASE_JOINT_X RotationalMotor {
+          name "motor_A1"
+        }
+      ]
+      endPoint DEF LINK1 Solid {
+        translation 0.075 0 0.08
+        children [
+          DEF LINK1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.7 1 1
+            }
+            geometry Box {
+              size 0.02 0.02 0.05
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0 0 0.045
+            }
+            device [
+              DEF KNEE_JOINT RotationalMotor {
+                name "motor_A2"
+              }
+            ]
+            endPoint DEF LINK2 Solid {
+              translation 0 0 0.09
+              rotation 1 0 0 0
+              children [
+                DEF LINK2 Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 1 0.5
+                  }
+                  geometry Box {
+                    size 0.02 0.02 0.05
+                  }
+                }
+              ]
+              boundingObject USE LINK2
+              physics Physics {
+              }
+            }
+          }
+        ]
+        boundingObject USE LINK1
+        physics Physics {
+        }
+      }
+    }
+    DEF LEG2 Hinge2Joint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.075 0 -0.055
+      }
+      jointParameters2 JointParameters {
+        axis -1 0 0
+      }
+      device [
+        DEF BASE_JOINT_Y RotationalMotor {
+          name "motor_B0"
+        }
+      ]
+      device2 [
+        DEF BASE_JOINT_X RotationalMotor {
+          name "motor_B1"
+        }
+      ]
+      endPoint DEF LINK1 Solid {
+        translation 0.075 0 -0.08
+        rotation 0 0.9999999999999999 0 3.14
+        children [
+          DEF LINK1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.7 1 1
+            }
+            geometry Box {
+              size 0.02 0.02 0.05
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0 0 0.045
+            }
+            device [
+              DEF KNEE_JOINT RotationalMotor {
+                name "motor_B2"
+              }
+            ]
+            endPoint DEF LINK2 Solid {
+              translation 0 0 0.09
+              rotation 1 0 0 0
+              children [
+                DEF LINK2 Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 1 0.5
+                  }
+                  geometry Box {
+                    size 0.02 0.02 0.05
+                  }
+                }
+              ]
+              boundingObject USE LINK2
+              physics Physics {
+              }
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE LINK1
+        physics Physics {
+        }
+      }
+    }
+    DEF LEG3 Hinge2Joint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.075 0 0.055
+      }
+      jointParameters2 JointParameters {
+        axis 1 0 0
+      }
+      device [
+        DEF BASE_JOINT_Y RotationalMotor {
+          name "motor_C0"
+        }
+      ]
+      device2 [
+        DEF BASE_JOINT_X RotationalMotor {
+          name "motor_C1"
+        }
+      ]
+      endPoint DEF LINK1 Solid {
+        translation -0.075 0 0.08
+        children [
+          DEF LINK1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.7 1 1
+            }
+            geometry Box {
+              size 0.02 0.02 0.05
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0 0 0.045
+            }
+            device [
+              DEF KNEE_JOINT RotationalMotor {
+                name "motor_C2"
+              }
+            ]
+            endPoint DEF LINK2 Solid {
+              translation 0 0 0.09
+              rotation 1 0 0 0
+              children [
+                DEF LINK2 Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 1 0.5
+                  }
+                  geometry Box {
+                    size 0.02 0.02 0.05
+                  }
+                }
+              ]
+              boundingObject USE LINK2
+              physics Physics {
+              }
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE LINK1
+        physics Physics {
+        }
+      }
+    }
+    DEF LEG4 Hinge2Joint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.075 0 -0.055
+      }
+      jointParameters2 JointParameters {
+        axis -1 0 0
+      }
+      device [
+        DEF BASE_JOINT_Y RotationalMotor {
+          name "motor_D0"
+        }
+      ]
+      device2 [
+        DEF BASE_JOINT_X RotationalMotor {
+          name "motor_D1"
+        }
+      ]
+      endPoint DEF LINK1 Solid {
+        translation -0.075 0 -0.08
+        rotation 0 0.9999999999999999 0 3.14
+        children [
+          DEF LINK1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.7 1 1
+            }
+            geometry Box {
+              size 0.02 0.02 0.05
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0 0 0.045
+            }
+            device [
+              DEF KNEE_JOINT RotationalMotor {
+                name "motor_D2"
+              }
+            ]
+            endPoint DEF LINK2 Solid {
+              translation 0 0 0.09
+              rotation 1 0 0 0
+              children [
+                DEF LINK2 Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 1 0.5
+                  }
+                  geometry Box {
+                    size 0.02 0.02 0.05
+                  }
+                }
+              ]
+              boundingObject USE LINK2
+              physics Physics {
+              }
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE LINK1
+        physics Physics {
+        }
+      }
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.15 0.05 0.08
+      }
+    }
+  ]
+  boundingObject USE BODY
+  physics Physics {
+  }
+  controller "simple-cpp"
+}
